@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2023_December.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<table><tr><td bgcolor="#252525" width="800">
+<h2 id="font-color%22skyblue%222023%E5%B9%B4-12%E6%9C%88font"><font color="skyblue">2023年 12月</font></h2>
+<h3 id="font-color%22violet%2212%E6%9C%88-1%E6%97%A5font"><font color="violet">12月 1日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+如果放弃真的那么简单，谁会选择纠缠？<br> 
+道理谁都懂，但真正喜欢过的人 <br>
+怎么能那么容易地放弃
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%88-2%E6%97%A5font"><font color="violet">12月 2日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+并不可否认，生活磨掉了我们一部分的勇气和温柔，<br>
+但我也相信，因为我们还年轻，<br>
+所以失去的还会长出来，而新的部分将会闪闪发光。
+</font></td></tr></table>
+</blockquote>
+<img src="./src/得偿所愿.jpg" alt="蓄谋已久，得偿所愿" width=500 >
+<h3 id="font-color%22violet%2212%E6%9C%88-3%E6%97%A5font"><font color="violet">12月 3日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+这山川如酒<br>
+敬旷世温柔 至死方休
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%88-4%E6%97%A5font"><font color="violet">12月 4日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+头等舱可以优先登机，银行VIP可以不用排队，演唱会最贵的位置票也最好<br>
+世界从来就不平等，你有多努力就有多特殊
+</font></td></tr></table>
+</blockquote>
+<img src="./src/年少有为.jpg" alt = "祝我年少有为" width = 500 >
+<h3 id="font-color%22violet%2212%E6%9C%88-5%E6%97%A5font"><font color="violet">12月 5日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+也许，这世界真的没有所谓的屠龙之术，<br>
+传说中的少年有的只是一把锈迹斑斑的铁剑，<br>
+但在所有人都仓皇出逃时，他有提剑而上的勇气
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%88-6%E6%97%A5font"><font color="violet">12月 6日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+《暗格里的秘密》里有一段台词：<br>
+“所以继续往前走吧，不要害怕，所有现在看似不起波澜的日复一日，<br>
+终究会在将来的某一天突然让你明白坚持和努力的意义”
+</font></td></tr></table>
+</blockquote>
+<img src="./src/日复一日.jpg" alt = "那些看似不起波澜的日复一日" width = 500 >
+<h3 id="font-color%22violet%2212%E6%9C%88-7%E6%97%A5font"><font color="violet">12月 7日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+我在，就是破釜沉舟，是披荆斩棘，<br>
+是一诺千金，是虽九死其尤未悔，<br>
+是越千山万壑也要与你共一个更美的春天。<br><br>
+<p align="right">——南方周末</p>
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%88-8%E6%97%A5font"><font color="violet">12月 8日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+“就像真诚这张牌，它加任何一张都是王炸，<br>
+唯独单出就是死牌”
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%88-9%E6%97%A5font"><font color="violet">12月 9日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+网络安全界有个术语叫做pointer use after free，释放后的指针就是野指针，即使是正确的信息写入原本属于它的地方，也是错误和危险的。
+</font></td></tr></table>
+</blockquote>
+<img src="./src/use-after-free.jpg" alt="use-after-free" width=500 >
+<h3 id="font-color%22violet%2212%E6%9C%8810%E6%97%A5font"><font color="violet">12月10日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+&emsp;“于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，正好赶上了。<br><br>
+&emsp;人和人之间所有的遇见，看似一场缘分，其实冥冥之中自有定数。有缘的你赶不走，无缘的，你求不来。人生，其实就是一场盛大的相遇。每一次潜意识的转身，每一个不经意的回眸，背后都藏着深深的根机和因缘。<br><br>
+&emsp;有人陪你一生，在寂寥的深秋里漫步前行，让你余生不再孤单。有人陪你一程，只为在你生命中留下一抹痕迹，然后匆匆离去。<br><br>
+&emsp;你会遇见谁，都是命中注定。”<br><br>
+<p align="right">———张爱玲</p>
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%8811%E6%97%A5font"><font color="violet">12月11日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+很荣幸能陪你走过这样一段路，<br>
+以后你不管是大红大紫还是泯然众人，我都记得在今年的这个暮冬到初春。<br>
+见证过你眼里有光并也认为前路有光的时刻。<br>
+祝你，永远一帆风顺，永远是少年。
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%8812%E6%97%A5font"><font color="violet">12月12日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+每个人心中都有一团火，但路过的人只看到烟。<br>
+但是总有一个人，总有那么一个人能看到这团火，<br>
+然后走过来，陪我一起。<br><br>
+<p align="right">——梵高</p>
+</font></td></tr></table>
+</blockquote>
+<img src="./src/星月夜.png" alt="星月夜" width="500" >
+<h3 id="font-color%22violet%2212%E6%9C%8813%E6%97%A5font"><font color="violet">12月13日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+“越是气场平和、心性温柔的人，越不爱和别人太密切地交往，生怕哪里辜负了对方的期待，同时也绝少期待他人。于是在一般社会看来，反而像是比较冷淡的人。”<br>
+“可惜越温柔的人，偏偏越难驯服。”
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%8814%E6%97%A5font"><font color="violet">12月14日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+“你为什么努力？”<br>
+“我想去的地方都很远，想要的东西都很贵，我喜欢的人超完美，<br>
+还有，始终坚定选择我的人的鼓励，一直支持着我的人的期望，<br>
+以及，天生傲骨”<br>
+</font></td></tr></table>
+</blockquote>
+<img src="./src/天赋.png" alt="天赋与决心" width="500" >
+<h3 id="font-color%22violet%2212%E6%9C%8815%E6%97%A5font"><font color="violet">12月15日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+“能说服人的，从来都不是道理，而是南墙;<br>
+能教人成长的，从来也不是书籍，而是经历。<br>
+人总是会以自己最不喜欢的方式成熟着。”
+</font></td></tr></table>
+</blockquote>
+<h3 id="font-color%22violet%2212%E6%9C%8816%E6%97%A5font"><font color="violet">12月16日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+所有的结局都已写好<br>
+所有的泪水也都已启程<br>
+却忽然忘了是怎么样的一个开始<br>
+在那个古老的不再回来的夏日<br>
+<p align="right">——席慕容《青春》</p>
+</font></td></tr></table>
+</blockquote>
+<img src="./src/起风了.jpg" alt="其实期待的不过是与时间为敌" width="500" >
+<h3 id="font-color%22violet%2212%E6%9C%8817%E6%97%A5font"><font color="violet">12月17日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+“紫霞喜欢至尊宝，至尊宝喜欢白晶晶，<br>
+&emsp;白晶晶喜欢齐天大圣，齐天大圣喜欢紫霞，<br>
+&emsp;你以为至尊宝和齐天大圣是一个人，<br>
+&emsp;你却忘了他们相差了五百年，<br>
+&emsp;什么都对，唯独时间不对  ”<br>
+<p align="right">——摘自网易云热评《慌》</p>
+</font></td></tr></table>
+</blockquote>
+<img src="./src/最好的年纪.jpg" alt="在最好的年纪遇见你" width="500" >
+<h3 id="font-color%22violet%2212%E6%9C%8818%E6%97%A5font"><font color="violet">12月18日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+有人负重三十载，有人雀入樊笼，有人在黑暗中莹莹踽踽，走了很久很久，<br>
+好在世间总有星辰开道，所以荆天棘地，也不枉此行。<br>
+</font></td></tr></table>
+</blockquote>
+<img src="./src/不枉此生.jpg" alt="不枉此生" width="500" >
+<h3 id="font-color%22violet%2212%E6%9C%8819%E6%97%A5font"><font color="violet">12月19日</font></h3>
+<blockquote>
+<table><tr><td bgcolor="#3b3b3b" width="500"><font color = "grey" face = "华文行楷">
+“后来我才确信，前程似锦就是再也不见的意思”<br>
+</font></td></tr></table>
+</blockquote>
+<img src="./src/全剧终.jpg" alt="再见" width="500" >
+</td></tr></table>
+</body>
+</html>
